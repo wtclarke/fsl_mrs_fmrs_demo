@@ -48,18 +48,18 @@ for sub in range(10):
 
     (our_dir / sub_str).mkdir(exist_ok=True)
     out_stim = our_dir / sub_str / 'stim'
-    out_closed = our_dir / sub_str / 'ctrl'
+    out_ctrl = our_dir / sub_str / 'ctrl'
 
     if args.parallel:
         check_call(
             cmd_parallel(path_stim, out_stim))
         check_call(
-            cmd_parallel(path_ctrl, out_closed))
+            cmd_parallel(path_ctrl, out_ctrl))
     else:
         check_call(
             cmd_series(path_stim, out_stim))
         print(f'Subject {sub}: stim done.')
         check_call(
-            cmd_series(path_ctrl, out_closed))
+            cmd_series(path_ctrl, out_ctrl))
         print(f'Subject {sub}: ctrl done.')
         print(f'Subject {sub+1}/10 done.')
