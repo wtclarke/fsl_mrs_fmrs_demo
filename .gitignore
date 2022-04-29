@@ -1,0 +1,7 @@
+fmrs_model_low_res.py
+low_res_basis/
+low_res_dmat.csv
+low_res_example/
+low_res_example_cmd/
+sort_from_processed.py
+**/.DS_Store
