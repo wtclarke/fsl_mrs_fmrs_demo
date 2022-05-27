@@ -5,3 +5,10 @@ low_res_example/
 low_res_example_cmd/
 sort_from_processed.py
 **/.DS_Store
+cmd_group_res/
+design.con
+design.mat
+fl_contrasts.json
+pttest_contrasts
+pttest_design
+results_list
