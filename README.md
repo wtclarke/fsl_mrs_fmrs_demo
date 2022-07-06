@@ -7,18 +7,15 @@ The demo covers how to fit a set of (simulated) fMRS data, modelled on single vo
 
 The repository is an accompaniment to the talk given by Saad Jbabdi. The repo contains far more information / content about the setup of the demo than will be covered in the talk, for instance how the simulated data was created.
 
-Saad and I (Will) had hopped to make this more polished, but family commitments for both of us has curtailed this ambition. We hope that as these tools mature in the future we can also have a more succinct demonstration of them here. The main casualty has been that the fMRS tools of FSL-MRS remain in a development version, hence the convoluted install instructions below. This should be resolved in the near future and in the meantime please get in touch for help installing either using the [issues page](https://github.com/wtclarke/fsl_mrs_fmrs_demo/issues) on this repo or on the [FSL JISC mailing list](mailto:FSL@JISCMAIL.AC.UK).
+This demo requires FSL-MRS version >= 2.0.0. The installed version can be checked using `fsl_mrs --version`. For help with this demo or installing FSL-MRS please git in touch either using the [issues page](https://github.com/wtclarke/fsl_mrs_fmrs_demo/issues) on this repo or on the [FSL JISC mailing list](mailto:FSL@JISCMAIL.AC.UK).
 
 ## Installation
 _How to install FSL-MRS (dev version) and get the contents of this repo._
-1. Install the development version of FSL-MRS. You will need a [conda installation and environment](https://open.win.ox.ac.uk/pages/fsl/fsl_mrs/conda.html#conda).
+1. Install FSL-MRS V2.0.0 or later as described in the [online documentation](https://open.win.ox.ac.uk/pages/fsl/fsl_mrs/install.html). You will need a [conda installation and environment](https://open.win.ox.ac.uk/pages/fsl/fsl_mrs/conda.html#conda).
     ```
-    git clone -b enh/v2_dynamic_update --single-branch https://git.fmrib.ox.ac.uk/wclarke/fsl_mrs.git
-    cd fsl_mrs
     conda install -c conda-forge -c defaults \
-                -c https://fsl.fmrib.ox.ac.uk/fsldownloads/fslconda/public/ \
-                --file requirements.txt
-    pip install --no-deps -e .
+              -c https://fsl.fmrib.ox.ac.uk/fsldownloads/fslconda/public/ \
+              fsl_mrs
     ```
 2. Clone this repository
     ```
