@@ -1,9 +1,8 @@
-# FSL-MRS fMRS fitting demo for ISMRM 2022
+# FSL-MRS fMRS fitting demo
 
-This is the GitHub repository that accompanies the dynamic fitting paper... [FSL-MRS](https://open.win.ox.ac.uk/pages/fsl/fsl_mrs/)  
+This is the GitHub repository containing an fMRS fitting demo that accompanies the FSL-MRS dynamic fitting paper __Spectral-dynamic fitting of functional MRS, diffusion weighted MRS, and edited MRS using a single interface__. [FSL-MRS](https://open.win.ox.ac.uk/pages/fsl/fsl_mrs/) is [FSL's](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki) spectroscopy analysis tool. 
 
 The demo covers how to fit a set of (simulated) fMRS data, modelled on single voxel, visual stimulation experiments, using a GLM model and FSL-MRS's "dynamic fitting" tools.
-
 
 This demo requires FSL-MRS version 2.1.0. The installed version can be checked using `fsl_mrs --version`. For help with this demo or installing FSL-MRS please git in touch either using the [issues page](https://github.com/wtclarke/fsl_mrs_fmrs_demo/issues) on this repo or on the [FSL JISC mailing list](mailto:FSL@JISCMAIL.AC.UK).
 
@@ -13,12 +12,14 @@ on Wednesday afternoon at [ISMRM 2022 (in London)](https://www.ismrm.org/22m/). 
 
 ## Installation
 _How to install FSL-MRS (dev version) and get the contents of this repo._
-1. Install FSL-MRS V2.1.0 or later as described in the [online documentation](https://open.win.ox.ac.uk/pages/fsl/fsl_mrs/install.html). You will need a [conda installation and environment](https://open.win.ox.ac.uk/pages/fsl/fsl_mrs/conda.html#conda).
+
+1. Install FSL-MRS V2.1.0 as described in the [online documentation](https://open.win.ox.ac.uk/pages/fsl/fsl_mrs/install.html). You will need a [conda installation and environment](https://open.win.ox.ac.uk/pages/fsl/fsl_mrs/conda.html#conda). `nilearn` and `ipykernel` is also a required dependency.
     ```
-    conda install -c conda-forge -c defaults \
-              -c https://fsl.fmrib.ox.ac.uk/fsldownloads/fslconda/public/ \
-              fsl_mrs
+    conda create -n fmrs_demo -c conda-forge python=3.8 --yes
+    conda activate fmrs_demo
+    conda install --yes -c conda-forge -c defaults -c https://fsl.fmrib.ox.ac.uk/fsldownloads/fslconda/public/ fsl_mrs nilearn ipykernel 
     ```
+
 2. Clone this repository
     ```
     git clone https://github.com/wtclarke/fsl_mrs_fmrs_demo.git
