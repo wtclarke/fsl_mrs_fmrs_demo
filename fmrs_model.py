@@ -27,10 +27,8 @@ Bounds = {
 # Dynamic models
 from numpy import dot
 
-def model_glm(params, desmat):
-    return dot(desmat, params)
+def model_glm(p,t):
+    return dot(t, p)
 
-
-# Dynamic model gradients
-def model_glm_grad(params, desmat):
-    return desmat.T
+def model_glm_grad(p,t):
+    return t.T
