@@ -1,35 +1,38 @@
-# FSL-MRS fMRS fitting demo for ISMRM 2022
+# FSL-MRS fMRS fitting demo
 
-This is the GitHub repository that accompanies the [FSL-MRS](https://open.win.ox.ac.uk/pages/fsl/fsl_mrs/) presentation given in the Member Initiated Symposium [_Functional MRS: Current Challenges & Cutting-Edge Methods_](https://submissions.mirasmart.com/ISMRM2022/Itinerary/ConferenceMatrixEventDetail.aspx?ses=MIS-08)
-on Wednesday afternoon at [ISMRM 2022 (in London)](https://www.ismrm.org/22m/). This demo __Using all the Information: Fitting Functional MRS with a GLM__ is scheduled to start at 15:50.
+This is the GitHub repository containing an fMRS fitting demo that accompanies the FSL-MRS dynamic fitting paper __Spectral-dynamic fitting of functional MRS, diffusion weighted MRS, and edited MRS using a single interface__. [FSL-MRS](https://open.win.ox.ac.uk/pages/fsl/fsl_mrs/) is [FSL's](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki) spectroscopy analysis tool. 
 
 The demo covers how to fit a set of (simulated) fMRS data, modelled on single voxel, visual stimulation experiments, using a GLM model and FSL-MRS's "dynamic fitting" tools.
 
-The repository is an accompaniment to the talk given by Saad Jbabdi. The repo contains far more information / content about the setup of the demo than will be covered in the talk, for instance how the simulated data was created.
+This demo requires FSL-MRS version 2.1.0. The installed version can be checked using `fsl_mrs --version`. For help with this demo or installing FSL-MRS please git in touch either using the [issues page](https://github.com/wtclarke/fsl_mrs_fmrs_demo/issues) on this repo or on the [FSL JISC mailing list](mailto:FSL@JISCMAIL.AC.UK).
 
-This demo requires FSL-MRS version >= 2.0.0. The installed version can be checked using `fsl_mrs --version`. For help with this demo or installing FSL-MRS please git in touch either using the [issues page](https://github.com/wtclarke/fsl_mrs_fmrs_demo/issues) on this repo or on the [FSL JISC mailing list](mailto:FSL@JISCMAIL.AC.UK).
+A previous version of this demo accompanied the demo given in the Member Initiated Symposium [_Functional MRS: Current Challenges & Cutting-Edge Methods_](https://submissions.mirasmart.com/ISMRM2022/Itinerary/ConferenceMatrixEventDetail.aspx?ses=MIS-08)
+on Wednesday afternoon at [ISMRM 2022 (in London)](https://www.ismrm.org/22m/). The talk was given by Saad Jbabdi and was titled __Using all the Information: Fitting Functional MRS with a GLM__. The repository at that point has been marked as a release `ISMRM 2022`.
+
 
 ## Installation
 _How to install FSL-MRS (dev version) and get the contents of this repo._
-1. Install FSL-MRS V2.0.0 or later as described in the [online documentation](https://open.win.ox.ac.uk/pages/fsl/fsl_mrs/install.html). You will need a [conda installation and environment](https://open.win.ox.ac.uk/pages/fsl/fsl_mrs/conda.html#conda).
+
+1. Install FSL-MRS V2.1.0 as described in the [online documentation](https://open.win.ox.ac.uk/pages/fsl/fsl_mrs/install.html). You will need a [conda installation and environment](https://open.win.ox.ac.uk/pages/fsl/fsl_mrs/conda.html#conda). `nilearn` and `ipykernel` is also a required dependency.
     ```
-    conda install -c conda-forge -c defaults \
-              -c https://fsl.fmrib.ox.ac.uk/fsldownloads/fslconda/public/ \
-              fsl_mrs
+    conda create -n fmrs_demo -c conda-forge python=3.8 --yes
+    conda activate fmrs_demo
+    conda install --yes -c conda-forge -c defaults -c https://fsl.fmrib.ox.ac.uk/fsldownloads/fslconda/public/ fsl_mrs nilearn ipykernel 
     ```
+
 2. Clone this repository
     ```
     git clone https://github.com/wtclarke/fsl_mrs_fmrs_demo.git
     ```
 
 ## Where to start
-After installing the required FSL-MRS version (above), we'd recommend starting by looking at __main_demo.ipynb__ which follows the talk most closely.
+After installing the required FSL-MRS version (above), we'd recommend starting by looking at __main_demo.ipynb__ which gives an overview of the analysis process.
 
 Then if you want to try running the fitting for yourself take a look at __first_level_fit_low_res_demo.ipynb__ then __first_level_fit.py__. 
 
 Finally, if you want to understand how the second level results are generated (in gory detail) see __second_level_analysis.ipynb__.
 
-`.ipynb` files can be opened using Jupyter notebooks in a browser or e.g. VScode. Note that these use plotly plots for interactive elements, which sometimes needs some extra setup.
+`.ipynb` files can be opened using Jupyter notebooks in a browser or e.g. VScode. Note that these notebooks use plotly plots for interactive elements, which sometimes needs some extra setup.
 
 ## What's in the repository
 This is a summary of each file and directory in the repository. 
@@ -53,5 +56,5 @@ The simulated data was created according to the following recipe:
 - Spectra were simulated using linewidths and SNRs to match the spectra in [Ip et al (2017)](https://doi.org/10.1016/j.neuroimage.2017.04.030).
 - The 64 spectra of each dataset were subdivided into 16-spectra blocks in a pattern of REST-STIM-REST-STIM (for stimulation condition) or REST-REST-REST-REST (no stimulation condition)
 - During stimulation blocks a HRF model was used to reduce the Gaussian linewidth component by 0.5 Hz.
-- A HRF was used to model changes in Glu, Lac, Glc and Asp according to the results of [Bednarik et al (2015)](https://journals.sagepub.com/doi/10.1038/jcbfm.2014.233). The HRF of Asp is deliberately temporally delayed to simulate a (somewhat) unknown model.
+- A HRF was used to model changes in Glu, Lac, Glc and Asp according to the results of [Bednarik et al (2015)](https://journals.sagepub.com/doi/10.1038/jcbfm.2014.233).
 - All other metabolites have no change during stimulation, but a random small linear drift is included.

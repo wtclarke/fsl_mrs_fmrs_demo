@@ -1,14 +1,6 @@
+from numpy import dot
 
 # Parameter - functional relationships
-# Parameters = {
-#     'conc'     : {'dynamic': 'model_glm', 'params': ['conc_stim1','conc_stim2','conc_drift','conc_intercept']},
-#     'gamma'    : 'fixed',
-#     'sigma'    : {'dynamic': 'model_glm', 'params': ['sigma_stim1','sigma_stim2','sigma_drift','sigma_intercept']},
-#     'eps'      : 'fixed',
-#     'baseline' : 'fixed',
-#     'Phi_0'    : 'fixed',
-#     'Phi_1'    : 'fixed'}
-
 Parameters = {
     'conc'     : {'dynamic': 'model_glm', 'params': [f'beta{i}' for i in range(4)]},
     'gamma'    : 'fixed',
@@ -25,10 +17,10 @@ Bounds = {
 
 
 # Dynamic models
-from numpy import dot
-
-def model_glm(p,t):
+def model_glm(p, t):
     return dot(t, p)
 
-def model_glm_grad(p,t):
+
+# Dynamic model gradients
+def model_glm_grad(p, t):
     return t.T
