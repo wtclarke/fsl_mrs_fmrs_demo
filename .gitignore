@@ -12,3 +12,6 @@ fl_contrasts.json
 pttest_contrasts
 pttest_design
 results_list
+**/report.html
+**/dynmrs_obj
+
