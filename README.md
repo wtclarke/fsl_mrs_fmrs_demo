@@ -20,7 +20,7 @@ _How to install FSL-MRS (dev version) and get the contents of this repo._
     conda install --yes -c conda-forge -c defaults -c https://fsl.fmrib.ox.ac.uk/fsldownloads/fslconda/public/ fsl_mrs nilearn ipykernel 
     ```
 
-2. Clone this repository
+2. Clone this repository. Make sure to have [git-lfs](https://git-lfs.com/) installed before cloning.
     ```
     git clone https://github.com/wtclarke/fsl_mrs_fmrs_demo.git
     ```
