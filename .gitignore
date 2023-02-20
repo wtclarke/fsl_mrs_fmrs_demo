@@ -14,4 +14,6 @@ pttest_design
 results_list
 **/report.html
 **/dynmrs_obj
+group_results/*_stim
+group_results/*_ctrl
 
