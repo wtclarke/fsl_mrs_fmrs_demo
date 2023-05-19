@@ -1,12 +1,12 @@
 # FSL-MRS fMRS fitting demo
 
-This is the GitHub repository containing an fMRS fitting demo that accompanies the FSL-MRS dynamic fitting paper __Spectral-dynamic fitting of functional MRS, diffusion weighted MRS, and edited MRS using a single interface__. [FSL-MRS](https://open.win.ox.ac.uk/pages/fsl/fsl_mrs/) is [FSL's](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki) spectroscopy analysis tool. 
+This is the GitHub repository containing an fMRS fitting demo that accompanies the FSL-MRS dynamic fitting paper __Simultaneous fitting of spectral and dynamic models to 2D-MRS__. [FSL-MRS](https://open.win.ox.ac.uk/pages/fsl/fsl_mrs/) is [FSL's](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki) spectroscopy analysis tool. 
 
 The demo covers how to fit a set of (simulated) fMRS data, modelled on single voxel, visual stimulation experiments, using a GLM model and FSL-MRS's "dynamic fitting" tools.
 
-This demo requires FSL-MRS version 2.1.0. The installed version can be checked using `fsl_mrs --version`. For help with this demo or installing FSL-MRS please git in touch either using the [issues page](https://github.com/wtclarke/fsl_mrs_fmrs_demo/issues) on this repo or on the [FSL JISC mailing list](mailto:FSL@JISCMAIL.AC.UK).
+This demo requires FSL-MRS version >=2.1.0. The installed version can be checked using `fsl_mrs --version`. For help with this demo or installing FSL-MRS please git in touch either using the [issues page](https://github.com/wtclarke/fsl_mrs_fmrs_demo/issues) on this repo or on the [FSL JISC mailing list](mailto:FSL@JISCMAIL.AC.UK).
 
-A previous version of this demo accompanied the demo given in the Member Initiated Symposium [_Functional MRS: Current Challenges & Cutting-Edge Methods_](https://submissions.mirasmart.com/ISMRM2022/Itinerary/ConferenceMatrixEventDetail.aspx?ses=MIS-08)
+A previous version of this demo accompanied the talk given in the Member Initiated Symposium [_Functional MRS: Current Challenges & Cutting-Edge Methods_](https://submissions.mirasmart.com/ISMRM2022/Itinerary/ConferenceMatrixEventDetail.aspx?ses=MIS-08)
 on Wednesday afternoon at [ISMRM 2022 (in London)](https://www.ismrm.org/22m/). The talk was given by Saad Jbabdi and was titled __Using all the Information: Fitting Functional MRS with a GLM__. The repository at that point has been marked as a release `ISMRM 2022`.
 
 
