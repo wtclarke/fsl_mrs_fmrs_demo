@@ -1,6 +1,6 @@
 # FSL-MRS fMRS fitting demo
 
-This is the GitHub repository containing an fMRS fitting demo that accompanies the FSL-MRS dynamic fitting paper __Simultaneous fitting of spectral and dynamic models to 2D-MRS__. [FSL-MRS](https://open.win.ox.ac.uk/pages/fsl/fsl_mrs/) is [FSL's](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki) spectroscopy analysis tool. 
+This is the GitHub repository containing an fMRS fitting demo that accompanies the FSL-MRS dynamic fitting paper [__Universal Dynamic Fitting of Magnetic Resonance Spectroscopy__](https://doi.org/10.1101/2023.06.15.544935). [FSL-MRS](https://open.win.ox.ac.uk/pages/fsl/fsl_mrs/) is [FSL's](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki) spectroscopy analysis tool. 
 
 The demo covers how to fit a set of (simulated) fMRS data, modelled on single voxel, visual stimulation experiments, using a GLM model and FSL-MRS's "dynamic fitting" tools.
 
